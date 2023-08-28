@@ -13,10 +13,16 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { useState } from 'react';
 
 export default function Navbar() {
+  const [isBrowseOpen, setIsBrowseOpen] = useState(false);
+
+  function toggleBrowse() {
+    setIsBrowseOpen(!isBrowseOpen);
+  }
   return (
-    <div className="fixed top-0 left-0 w-full justify-between flex items  p-5 lg:px-20">
+    <div className="fixed z-10 top-0 left-0 w-full justify-between flex items  p-5 lg:px-20">
       <div className="flex items-center">
         <Image
           src="/images/logo.png"
@@ -26,12 +32,24 @@ export default function Navbar() {
           height={300}
         />
         <div className="lg:flex ml-20 gap-7 hidden text-white">
-          <div>Home</div>
-          <div>Series</div>
-          <div>Films</div>
-          <div>New & Popular</div>
-          <div>My List</div>
-          <div>Browse by languages</div>
+          <div className="opacity-80 hover:opacity-100 select-none cursor-pointer transition">
+            Home
+          </div>
+          <div className="opacity-80 hover:opacity-100 select-none cursor-pointer transition">
+            Series
+          </div>
+          <div className="opacity-80 hover:opacity-100 select-none cursor-pointer transition">
+            Films
+          </div>
+          <div className="opacity-80 hover:opacity-100 select-none cursor-pointer transition">
+            New & Popular
+          </div>
+          <div className="opacity-80 hover:opacity-100 select-none cursor-pointer transition">
+            My List
+          </div>
+          <div className="opacity-80 hover:opacity-100 select-none cursor-pointer transition">
+            Browse by languages
+          </div>
         </div>
         <div className="lg:hidden flex items-center gap-2 text-sm text-white ml-10">
           <DropdownMenu>
