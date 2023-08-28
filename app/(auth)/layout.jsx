@@ -12,6 +12,7 @@ export default function authLayout({ children }) {
             width={250}
             height={250}
           />
+          <h1>Hello world</h1>
         </nav>
         {children}
       </div>
