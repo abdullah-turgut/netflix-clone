@@ -1,6 +1,7 @@
 'use client';
 
 import { isEmpty } from 'lodash';
+import MovieCard from './movie-card';
 
 export default function MovieList({ data, title }) {
   if (isEmpty(data)) {
